@@ -24,7 +24,15 @@ const config = {
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/,
-        use: 'file-loader'
+        loader: 'file-loader',
+        options: {
+          name (file) {
+            if (env === 'development') {
+              return '[path][name].[ext]'
+            }
+            return '[hash].[ext]'
+          }
+        }
       }
     ],
   },
