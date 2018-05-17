@@ -1,8 +1,7 @@
 "use strict";
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-const env = process.env.NODE_ENV;
+const rules = require('./module.js');
 
 const config = {
   entry: {
@@ -12,30 +11,7 @@ const config = {
     filename: 'bundle.js',
     path: path.resolve(__dirname + '/dist'),
   },
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-      {
-        test: /\.html$/,
-        use: 'html-loader'
-      },
-      {
-        test: /\.(png|jpg|jpeg|gif)$/,
-        loader: 'file-loader',
-        options: {
-          name (file) {
-            if (env === 'development') {
-              return '[path][name].[ext]'
-            }
-            return '[hash].[ext]'
-          }
-        }
-      }
-    ],
-  },
+  module: rules,
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html'
