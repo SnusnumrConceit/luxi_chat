@@ -3,8 +3,19 @@ const env = process.env.NODE_ENV;
 const rules = {
   rules: [
     {
-      test: /\.css$/,
-      use: ['style-loader', 'css-loader']
+      test: /\.(scss|css)$/,
+      use: ['style-loader', 'css-loader', 'sass-loader']
+      // use: [
+      //   {
+      //     loader: 'style-loader',
+      //   },
+      //   {
+      //     loader: 'css-loader',
+      //   },
+      //   {
+      //     loader: 'sass-loader'
+      //   }
+      // ]
     },
     {
       test: /\.html$/,
