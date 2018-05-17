@@ -16,11 +16,21 @@ const config = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.html$/,
+        use: 'html-loader'
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/,
+        use: 'file-loader'
       }
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    }),
   ]
 };
 
