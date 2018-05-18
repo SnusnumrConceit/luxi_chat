@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const path = require('path');
-const rules = require('./module.js');
+const loaders = require('./loaders.js');
 const distPath = path.resolve(__dirname + '/dist');
 
 const config = {
@@ -14,7 +14,7 @@ const config = {
     filename: 'bundle.js',
     path: distPath,
   },
-  module: rules,
+  module: loaders,
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html'
@@ -24,9 +24,6 @@ const config = {
     })
   ]
 };
-
-//@todo postcss loader
-//@todo image loader
 //@todo vue loader
 
 module.exports = config;
