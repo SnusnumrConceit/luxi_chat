@@ -1,6 +1,7 @@
 <template>
   <div>
     biba i'm first component
+    chikki-brikki
   </div>
 </template>
 <script>
