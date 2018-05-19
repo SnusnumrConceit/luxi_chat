@@ -2,18 +2,31 @@ const env = process.env.NODE_ENV;
 
 const rules = {
   rules: [
+
+    // css, postcss, sass loaders
     {
-      test: /\.(scss|css)$/,
+      test: /\.(scss|css|sass)$/,
       use: [{
-        loader: 'style-loader',
+        loader: 'vue-style-loader',
       }, {
         loader: 'css-loader',
       }, {
         loader: 'postcss-loader'
       }, {
-        loader: 'sass-loader'
+        loader: 'sass-loader',
+        options: {
+          indentedSyntax: true
+        }
       }]
     },
+
+    // vue loader
+    {
+      test: /\.vue$/,
+      loader: 'vue-loader'
+    },
+
+    // babel loader
     {
       test: /\.js$/,
       exclude: /node_modules/,
@@ -24,10 +37,14 @@ const rules = {
         }
       }
     },
+
+    // html loader
     {
       test: /\.html$/,
       use: 'html-loader'
     },
+
+    // file loader
     {
       test: /\.(png|jpg|jpeg|gif)$/,
       loader: 'file-loader',
