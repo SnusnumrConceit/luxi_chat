@@ -1,6 +1,7 @@
 "use strict";
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const path = require('path');
 const loaders = require('./loaders.js');
@@ -21,7 +22,8 @@ const config = {
     }),
     new CleanWebpackPlugin(distPath, {
       verbose: true,
-    })
+    }),
+    new VueLoaderPlugin()
   ]
 };
 //@todo vue loader
