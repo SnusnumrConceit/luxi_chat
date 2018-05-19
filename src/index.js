@@ -1,5 +1,7 @@
-import { mainClass } from './main.css';
-import { biba } from './biba.js';
+import Vue from 'vue';
+import App from './app.vue';
 
-biba('biba test');
-console.log('hello world');
+new Vue({
+  render: h => h(App),
+}).$mount('#vue');
+
