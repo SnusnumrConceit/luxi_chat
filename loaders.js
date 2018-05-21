@@ -14,9 +14,6 @@ const rules = {
         loader: 'postcss-loader'
       }, {
         loader: 'sass-loader',
-        options: {
-          indentedSyntax: true
-        }
       }]
     },
 
@@ -46,17 +43,17 @@ const rules = {
 
     // file loader
     {
-      test: /\.(png|jpg|jpeg|gif)$/,
+      test: /\.(png|svg|jpg|jpeg|gif)$/,
       loader: 'file-loader',
       options: {
         name (file) {
           if (env === 'development') {
-            return '[path][name].[ext]'
+            return '/[path][name].[ext]'
           }
           return '[hash].[ext]'
         }
       }
-    }
+    },
   ],
 };
 module.exports = rules;
