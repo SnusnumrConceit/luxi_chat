@@ -5,7 +5,9 @@
 </template>
 
 <script>
+  import "../node_modules/normalize.css";
   import chat from './components/chat.vue'
+
   export default {
     name: 'app',
     components: {
@@ -15,8 +17,7 @@
 </script>
 
 <style lang="scss">
-  @import "~normalize.css";
-
+ @import "./styles/main.scss";
   .main {
     width: 100%;
     height: 100%;
