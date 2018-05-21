@@ -1,20 +1,28 @@
 <template>
-  <div>
-    biba i'm an App
-    <first-component></first-component>
+  <div class="main">
+    <chat></chat>
   </div>
 </template>
+
 <script>
-  import firstComponent from './first_component.vue'
+  import chat from './components/chat.vue'
   export default {
     name: 'app',
     components: {
-      'first-component': firstComponent
+      'chat': chat
     }
   }
 </script>
-<style lang="sass">
-  body
-    background: red
 
+<style lang="scss">
+  @import "~normalize.css";
+
+  .main {
+    width: 100%;
+    height: 100%;
+    background: #191919;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 </style>
